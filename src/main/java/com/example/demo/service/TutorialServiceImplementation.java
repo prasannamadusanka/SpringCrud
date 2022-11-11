@@ -21,7 +21,7 @@ public class TutorialServiceImplementation implements TutorialService {
 	}
 
 	@Override
-	public String deleteTutorials(long id) {
+	public String deleteTutorials(int id) {
 		// TODO Auto-generated method stub
 		tutorialRepository.deleteById((int) id);
 		return "okay";
@@ -32,5 +32,12 @@ public class TutorialServiceImplementation implements TutorialService {
 		// TODO Auto-generated method stub
 		return tutorialRepository.save(tutorial);
 	}
+
+	@Override
+	public Tutorial findById(int id) {
+		// TODO Auto-generated method stub
+		return tutorialRepository.findById(id).get();
+	}
+
 
 }

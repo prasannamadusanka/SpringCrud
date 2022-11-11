@@ -3,44 +3,44 @@ package com.example.demo.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tutorial")
-public class Tutorial {
+@Table(name = "books")
+public class Books {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@ManyToOne
-	private Books books;
-	
 	@Column(name = "name")
 	private String name;
-
-	public Tutorial() {
+	
+	@Column(name = "Category")
+	private String Category;
+	
+	public Books() {
 		super();
 	}
-
+	
 	public int getId() {
 		return id;
 	}
-
-	public Books getBooks() {
-		return books;
-	}
-
-	public void setBooks(Books books) {
-		this.books = books;
-	}
-
+	
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	
 	public String getName() {
 		return name;
 	}
-
+	
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getCategory() {
+		return Category;
+	}
+	
+	public void setCategory(String category) {
+		Category = category;
 	}
 	
 }
